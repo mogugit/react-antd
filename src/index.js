@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+  // StrictMode 严格模式，只在开发环境生效不影响生成环境 一个用来突出显示应用程序中潜在问题的工具，参考地址https://zh-hans.reactjs.org/docs/strict-mode.html#gatsby-focus-wrapper
   <React.StrictMode>
     <App />
   </React.StrictMode>,
