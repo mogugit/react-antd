@@ -1,14 +1,36 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined  } from '@ant-design/icons';
+
+import Breadcrumb from '../../components/Breadcrumb'
 
 const { SubMenu } = Menu;
 const { Header,Content,Sider } = Layout
 
+function CustomizeMenu(props){
+    let itemArr = props.arr;
+    let defaulMenu = {
+
+    }
+    let MenuList = itemArr.map(item=>{
+        return (
+            <Menu.Item>{  } </Menu.Item>
+        )
+    })
+
+
+    return (
+        <Menu >
+            {MenuList}
+        </Menu>
+    )
+}
+
+
 
 function Welcome(props){
     return (
-        <Layout>
+        <Layout id="componentLayout">
             <Header className="header">
                 <div className="logo"/>
                 <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
@@ -21,7 +43,7 @@ function Welcome(props){
             </Header>
             <Layout>
                 <Sider width="200" className="site-layout-background">
-                    <Menu 
+                    <Menu
                         mode="inline"
                         defaultOpenKeys={['sub1']}
                         defaultSelectedKeys={['1']}
@@ -57,11 +79,7 @@ function Welcome(props){
                     </Menu>
                 </Sider>
                 <Layout style={{padding: "0 24px 24px"}}>
-                    <Breadcrumb style={{margin: "16px 0"}}>
-                        <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>List</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
-                    </Breadcrumb>
+                    <Breadcrumb value={['Home','List','App']}></Breadcrumb>
                     <Content
                         className="site-layout-background"
                         style={{
@@ -73,7 +91,7 @@ function Welcome(props){
                         Context
                     </Content>
                 </Layout>
-            </Layout>  
+            </Layout>
         </Layout>
     )
 }
